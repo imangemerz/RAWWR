@@ -1,0 +1,100 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #f0f0f0;
+    text-align: center;
+}
+
+.container {
+    padding: 30px;
+    background: rgba(42, 42, 42, 0.85);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    margin-bottom: 20px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #00e5ff;
+    text-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 14px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background: linear-gradient(90deg, #00e5ff, #00bcd4);
+    color: #1a1a1a;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0, 229, 255, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 229, 255, 0.6);
+}
+
+.video-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease-in-out, margin-top 0.5s ease;
+}
+
+.video-wrapper.show {
+    max-height: 900px;
+    margin-top: 25px;
+}
+
+.video-box {
+    width: 100%;
+    max-width: 400px; /* Saiz kotak video */
+    aspect-ratio: 1 / 1; /* Pastikan petak 1:1 */
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.4);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Supaya video fit dalam kotak petak */
+    display: block;
+}
+
+.caption {
+    margin-top: 12px;
+    font-style: italic;
+    font-size: 1rem;
+    color: #fff;
+    text-shadow: 0 0 8px rgba(0,0,0,0.6);
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.95);}
+    to {opacity: 1; transform: scale(1);}
+}
+
+@keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
